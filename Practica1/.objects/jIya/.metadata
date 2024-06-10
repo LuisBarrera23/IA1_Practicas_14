@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Chrome The World's Largest Book Database - IS",
+  "Type": "App",
+  "Id": "jIyaE4HMc0SldnDFtmbz4A",
+  "Reference": "n1pC-cyq80eKuI6Vy6Fp-A/jIyaE4HMc0SldnDFtmbz4A",
+  "Created": "2024-06-09T04:57:00.5141086Z",
+  "Updated": "2024-06-09T04:57:00.5141086Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.4.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="V8vOQUP6ck6vSqaBQoGQ_w" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://isbndb.com/book/9780743273565" CVScreenId="00d82f55-d8c0-4f4e-8fc9-9937d10932ef" CvElementArea="689, 631, 884, 58" CvType="InputBox" DesignTimeRectangle="736, 637, 458, 33" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='5' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='' aaname='                                                                                                                                  ' /&gt;" Guid="92d64ecf-6f3d-42a1-b4a1-06602ee02ab8" ScopeSelectorArgument="&lt;html app='chrome.exe' title='| ISBNdb' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="00d82f55-d8c0-4f4e-8fc9-9937d10932ef" CvTextArea="595, 643, 81, 18" CvTextArgument="Authors:" CvType="Text" DesignTimeRectangle="596, 637, 140, 33" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='5' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' aaname='Authors:' check:innerText='Authors:' /&gt;" Guid="860df0d3-65b7-4a3e-a7a1-54136692c0dd" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="5165b0b39612cdba21754222a9f085ba.png" xmlns="">0fRu0kDMSCkivlVuxXKkYqA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Obtener texto 'Full Title'",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "PYADaTtPlk2AgUUdqg46SQ",
+  "Reference": "n1pC-cyq80eKuI6Vy6Fp-A/PYADaTtPlk2AgUUdqg46SQ",
+  "ParentRef": "n1pC-cyq80eKuI6Vy6Fp-A/bQvlsBqt5U62Lw5g1ACAxg",
+  "Created": "2024-06-09T18:47:57.2558899Z",
+  "Updated": "2024-06-09T18:47:57.2558899Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.4.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="gjCv79EuQ0ap7a6bjfVdVQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://isbndb.com/book/9780743273565" CVScreenId="00d82f55-d8c0-4f4e-8fc9-9937d10932ef" CvTextArea="595, 445, 86, 18" CvTextArgument="Full Title:" CvType="Text" DesignTimeRectangle="596, 439, 140, 33" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' aaname='Full Title:' check:innerText='Full Title:' /&gt;" Guid="a224bb53-162c-46f8-9ed6-f68dbec5c47b" ScopeSelectorArgument="&lt;html app='chrome.exe' title='| ISBNdb' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="a5f8c2915fb0958839cdc15548fb0c27.png" xmlns="">0mtBtwTkA20engUp94WwKsw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="TXvOQr63sEWK0YngyalXAw" Reference="n1pC-cyq80eKuI6Vy6Fp-A/KjViVCFGw0eCbFknMajAAw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" Accuracy="0.7" BrowserURL="https://isbndb.com/" CVScreenId="306c2ff1-166b-4c0b-b570-e2f3f42e18b0" CvTextArea="324, 482, 190, 18" CvTextArgument="Search ISBN or Title" CvType="Text" DesignTimeRectangle="287, 516, 1342, 82" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='search_query' parentid='block-isbndbsearchblock' tag='INPUT' /&gt;" FuzzyAccuracy="0.8" FuzzySelectorArgument="&lt;webctrl id='search_query' parentid='block-isbndbsearchblock' tag='INPUT' type='text' class='search_query form-control' placeholder='Search ISBN or Title' aaname='' /&gt;" Guid="8a4be1f9-00b8-4035-8335-1ecb991d664c" ScopeSelectorArgument="&lt;html app='chrome.exe' title='The World&amp;apos;s Largest Book Database - ISBN Database | ISBNdb' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="001aaa10-1b99-49c9-a804-50f83654a6f3" CvTextArea="280, 412, 1352, 52" CvTextArgument="The World's largest book database TM &amp; ISBN API" CvType="Text" DesignTimeRectangle="259, 403, 1400, 73" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='text-center text-white mb-12 mb-sm-10 mb-md-12' aaname='The World&amp;apos;s largest book database™ &amp;amp; ISBN API' check:innerText='The World&amp;apos;s largest book database™ &amp;amp; ISBN API' /&gt;" Guid="697e248f-019a-4fef-b488-dc9166348149" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="ef177764b4e646382984cfbb994a8d83.png" xmlns="">0B2uHOL9jPki6PEpG5fgwhA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Obtener texto 'List Price'",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "0Hhc6ln2E0yGyFUhNtnI2g",
+  "Reference": "n1pC-cyq80eKuI6Vy6Fp-A/0Hhc6ln2E0yGyFUhNtnI2g",
+  "ParentRef": "n1pC-cyq80eKuI6Vy6Fp-A/bQvlsBqt5U62Lw5g1ACAxg",
+  "Created": "2024-06-09T18:52:54.5256124Z",
+  "Updated": "2024-06-09T18:52:54.5256124Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.4.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

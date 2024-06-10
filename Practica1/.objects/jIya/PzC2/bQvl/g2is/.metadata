@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Obtener texto 'Authors'(1)",
+  "Type": "Element",
+  "Id": "g2is3dxMX0ePLn6PPXop2g",
+  "Reference": "n1pC-cyq80eKuI6Vy6Fp-A/g2is3dxMX0ePLn6PPXop2g",
+  "ParentRef": "n1pC-cyq80eKuI6Vy6Fp-A/bQvlsBqt5U62Lw5g1ACAxg",
+  "Created": "2024-06-09T18:49:43.8274549Z",
+  "Updated": "2024-06-09T18:49:43.8274549Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.4.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

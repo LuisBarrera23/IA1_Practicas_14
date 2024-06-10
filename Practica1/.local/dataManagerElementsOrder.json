@@ -12,7 +12,12 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "tabla&Sequence_4"
+        "precio&Sequence_8",
+        "autor&Sequence_8",
+        "titulo&Sequence_8",
+        "artículosEnCola&Sequence_1",
+        "urlSalida&Sequence_1",
+        "urlExcel&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
         "argument1"

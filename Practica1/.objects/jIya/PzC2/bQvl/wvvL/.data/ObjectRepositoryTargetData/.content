@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Vg3uk3qgB0iJdHD_cLc-rQ" Reference="n1pC-cyq80eKuI6Vy6Fp-A/wvvLkg-jU0OxuuFQ0Ftt8w" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://isbndb.com/book/9780743273565" CVScreenId="00d82f55-d8c0-4f4e-8fc9-9937d10932ef" CvTextArea="595, 595, 93, 18" CvTextArgument="List Price:" CvType="Text" DesignTimeRectangle="596, 587, 140, 33" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='4' tag='TH' /&gt;" FuzzyAccuracy="0.9" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' aaname='List Price:' check:innerText='List Price:' /&gt;" Guid="4c312f4c-8f20-4ded-8450-f9db40c3c92d" ScopeSelectorArgument="&lt;html app='chrome.exe' title='| ISBNdb' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="169b0400bc2c5deb91f7c9dfddd43e19.png" xmlns="">07gvi_zGwbkKTxJ6P2-gmrg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

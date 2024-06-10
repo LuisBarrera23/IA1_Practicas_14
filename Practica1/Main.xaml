@@ -1,11 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="argument1" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1075,2430</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1869.6,6293.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -53,6 +53,10 @@
       <x:String>UiPath.Platform.SyncObjects</x:String>
       <x:String>UiPath.DataTableUtilities</x:String>
       <x:String>UiPath.Activities.System.Text</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -117,9 +121,10 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="704,2365" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1880,6228.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:IEnumerable(ui:QueueItem)" Name="artículosEnCola">
         <sap:WorkflowViewStateService.ViewState>
@@ -129,102 +134,269 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Variable>
+      <Variable x:TypeArguments="x:String" Name="urlExcel" />
+      <Variable x:TypeArguments="x:String" Name="urlSalida" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtResultados" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Alcance del proceso de Excel" sap:VirtualizedContainerService.HintSize="642,1271" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2">
-      <ueab:ExcelProcessScopeX.Body>
-        <ActivityAction x:TypeArguments="ui:IExcelProcess">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="608,1152" sap2010:WorkflowViewState.IdRef="Sequence_3">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="546,1067" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="C:\Users\luisb.ANGEL_BARRERA\Desktop\IA1_Practicas_14\ISBNS.xlsx">
-              <ueab:ExcelApplicationCard.Body>
-                <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
-                  <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="ISBNs" />
-                  </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,775" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                    <Sequence.Variables>
-                      <Variable x:TypeArguments="sd:DataTable" Name="tabla" />
-                    </Sequence.Variables>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ueab:ReadRangeX DisplayName="Leer rango" sap:VirtualizedContainerService.HintSize="450,201" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[ISBNs.Sheet(&quot;Sheet1&quot;).Range(&quot;A1:A25&quot;)]" SaveTo="[tabla]" />
-                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[tabla]" DisplayName="Para cada fila de la tabla de datos" sap:VirtualizedContainerService.HintSize="450,489" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
-                      <ui:ForEachRow.Body>
-                        <ActivityAction x:TypeArguments="sd:DataRow">
-                          <ActivityAction.Argument>
-                            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
-                          </ActivityAction.Argument>
-                          <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="416,302" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <Sequence DisplayName="ObtenerAssets" sap:VirtualizedContainerService.HintSize="1817.6,462.4" sap2010:WorkflowViewState.IdRef="Sequence_9">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="urlExcel" CacheStrategy="None" DisplayName="Obtener activo" FolderPath="Practica1_14" sap:VirtualizedContainerService.HintSize="387.2,175.2" sap2010:WorkflowViewState.IdRef="GetRobotAsset_2">
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:String">[urlExcel]</OutArgument>
+        </ui:GetRobotAsset.Value>
+      </ui:GetRobotAsset>
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="urlSalida" CacheStrategy="None" DisplayName="Obtener activo" FolderPath="Practica1_14" sap:VirtualizedContainerService.HintSize="387.2,166.4" sap2010:WorkflowViewState.IdRef="GetRobotAsset_3">
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:String">[urlSalida]</OutArgument>
+        </ui:GetRobotAsset.Value>
+      </ui:GetRobotAsset>
+    </Sequence>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Array.ForEach(Directory.GetFiles(path),Sub(x) File.Delete(x))" DisplayName="Invocar código" sap:VirtualizedContainerService.HintSize="1817.6,196.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="path">[urlSalida]</InArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <ui:InvokeProcess ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invocar proceso" FolderPath="Practica1_14" sap:VirtualizedContainerService.HintSize="1817.6,199.2" sap2010:WorkflowViewState.IdRef="InvokeProcess_1" ProcessName="ProcesarISBNs">
+      <ui:InvokeProcess.Arguments>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:InvokeProcess.Arguments>
+    </ui:InvokeProcess>
+    <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" Top="{x:Null}" DisplayName="Obtener elementos de la cola" FilterStrategy="Equals" FolderPath="Practica1_14" sap:VirtualizedContainerService.HintSize="1817.6,175.2" sap2010:WorkflowViewState.IdRef="GetQueueItems_1" QueueItemStates="All" QueueName="ISBNs_14" Result="[artículosEnCola]" />
+    <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="1817.6,5106.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="1755.2,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="sd:DataTable">[dtResultados]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="sd:DataTable">[New DataTable]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="ISBN" DataTable="[dtResultados]" DisplayName="Añadir columna de datos" sap:VirtualizedContainerService.HintSize="1755.2,220" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
+      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Title" DataTable="[dtResultados]" DisplayName="Añadir columna de datos" sap:VirtualizedContainerService.HintSize="1755.2,220" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" />
+      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Author" DataTable="[dtResultados]" DisplayName="Añadir columna de datos" sap:VirtualizedContainerService.HintSize="1755.2,220" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_3" />
+      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Price" DataTable="[dtResultados]" DisplayName="Añadir columna de datos" sap:VirtualizedContainerService.HintSize="1755.2,220" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_4" />
+      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Result" DataTable="[dtResultados]" DisplayName="Añadir columna de datos" sap:VirtualizedContainerService.HintSize="1755.2,220" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_5" />
+      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[New Object() {&quot;ISBN&quot;,&quot;Title&quot;, &quot;Author&quot;,&quot;Price&quot;,&quot;Result&quot;}]" DataTable="[dtResultados]" DisplayName="Añadir fila de datos" sap:VirtualizedContainerService.HintSize="1755.2,220" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+      <uix:NApplicationCard AttachMode="SingleWindow" DisplayName="Chrome The World's Largest Book Database - IS" sap:VirtualizedContainerService.HintSize="1755.2,3421.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="8acb0345-7ba8-4fec-bc5c-31a61474da3d" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="1721.6,3172.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ForEach x:TypeArguments="ui:QueueItem" CurrentIndex="{x:Null}" DisplayName="Para cada" sap:VirtualizedContainerService.HintSize="1659.2,3086.4" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[artículosEnCola]">
+                <ui:ForEach.Body>
+                  <ActivityAction x:TypeArguments="ui:QueueItem">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="ui:QueueItem" Name="ElementoColaActual" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="1625.6,2897.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="titulo" />
+                        <Variable x:TypeArguments="x:String" Name="autor" />
+                        <Variable x:TypeArguments="x:String" Name="precio" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:GetQueueItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Obtener elemento de transacción" FolderPath="Practica1_14" sap:VirtualizedContainerService.HintSize="1563.2,175.2" sap2010:WorkflowViewState.IdRef="GetQueueItem_1" QueueType="ISBNs_14" TransactionItem="[ElementoColaActual]" />
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Regresar a Home" sap:VirtualizedContainerService.HintSize="1563.2,225.6" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8acb0345-7ba8-4fec-bc5c-31a61474da3d" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://isbndb.com/book/9780547928227" CVScreenId="55832c1a-d087-4e9d-9b89-8bebaeeef9c1" ContentHash="ikZ0HNNkWEGVJ-CREvOBVg" CvTextArea="277, 230, 137, 37" CvTextArgument="ISBNDB" CvType="Text" DesignTimeRectangle="219, 218, 193, 60" DesignTimeScaleFactor="1.25" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IMG' type='' class='' aaname='Home' /&gt;" Guid="6b742f86-724b-4d8b-9135-41437eb8e78b" ImageBase64="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" InformativeScreenshot="bc895df3938a99b495ee6836da080ea3.png" Reference="n1pC-cyq80eKuI6Vy6Fp-A/sjvQ1d-KLEaUdF5_Tx-Z-w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='| ISBNdb' /&gt;" SearchSteps="FuzzySelector, Image" Version="V3" Visibility="Interactive" />
+                        </uix:NClick.Target>
+                        <uix:NClick.VerifyOptions>
+                          <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                            <uix:VerifyExecutionOptions.Retry>
+                              <InArgument x:TypeArguments="x:Boolean" />
+                            </uix:VerifyExecutionOptions.Retry>
+                            <uix:VerifyExecutionOptions.Timeout>
+                              <InArgument x:TypeArguments="x:Double" />
+                            </uix:VerifyExecutionOptions.Timeout>
+                          </uix:VerifyExecutionOptions>
+                        </uix:NClick.VerifyOptions>
+                      </uix:NClick>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Escribir en 'Escribir en 'INPUT search_query''" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1563.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="8acb0345-7ba8-4fec-bc5c-31a61474da3d" Text="[DirectCast(ElementoColaActual.SpecificContent, Dictionary(Of String, Object))(&quot;ISBN&quot;).ToString()]" Version="V3">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable Accuracy="0.7" BrowserURL="https://isbndb.com/" CVScreenId="306c2ff1-166b-4c0b-b570-e2f3f42e18b0" ContentHash="TXvOQr63sEWK0YngyalXAw" CvTextArea="324, 482, 190, 18" CvTextArgument="Search ISBN or Title" CvType="Text" DesignTimeRectangle="287, 516, 1342, 82" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='search_query' parentid='block-isbndbsearchblock' tag='INPUT' /&gt;" FuzzyAccuracy="0.8" FuzzySelectorArgument="&lt;webctrl id='search_query' parentid='block-isbndbsearchblock' tag='INPUT' type='text' class='search_query form-control' placeholder='Search ISBN or Title' aaname='' /&gt;" Guid="8a4be1f9-00b8-4035-8335-1ecb991d664c" InformativeScreenshot="ef177764b4e646382984cfbb994a8d83.png" Reference="n1pC-cyq80eKuI6Vy6Fp-A/KjViVCFGw0eCbFknMajAAw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='The World&amp;apos;s Largest Book Database - ISBN Database | ISBNdb' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CVScreenId="001aaa10-1b99-49c9-a804-50f83654a6f3" CvTextArea="280, 412, 1352, 52" CvTextArgument="The World's largest book database TM &amp; ISBN API" CvType="Text" DesignTimeRectangle="259, 403, 1400, 73" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='text-center text-white mb-12 mb-sm-10 mb-md-12' aaname='The World&amp;apos;s largest book database™ &amp;amp; ISBN API' check:innerText='The World&amp;apos;s largest book database™ &amp;amp; ISBN API' /&gt;" Guid="697e248f-019a-4fef-b488-dc9166348149" SearchSteps="FuzzySelector, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NTypeInto.Target>
+                        <uix:NTypeInto.VerifyOptions>
+                          <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                            <uix:VerifyExecutionTypeIntoOptions.Retry>
+                              <InArgument x:TypeArguments="x:Boolean" />
+                            </uix:VerifyExecutionTypeIntoOptions.Retry>
+                            <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                              <InArgument x:TypeArguments="x:Double" />
+                            </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          </uix:VerifyExecutionTypeIntoOptions>
+                        </uix:NTypeInto.VerifyOptions>
+                      </uix:NTypeInto>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Buscar ISBN" sap:VirtualizedContainerService.HintSize="1563.2,225.6" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8acb0345-7ba8-4fec-bc5c-31a61474da3d" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://isbndb.com/" ContentHash="hiPR6fXib06lvhKiKp4Y5w" DesignTimeRectangle="1543, 532, 48, 48" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl id='search-button' parentid='block-isbndbsearchblock' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='search-button' parentid='block-isbndbsearchblock' tag='BUTTON' type='submit' class='search-button btn btn-default' aaname='' /&gt;" Guid="f3aee44f-0425-4385-b708-e2e53264d201" ImageBase64="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" InformativeScreenshot="2ad1447f3b6929520864d7edf5860bc5.png" Reference="n1pC-cyq80eKuI6Vy6Fp-A/RoI7vCvPi0-jKXdq0rq4LQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='The World&amp;apos;s Largest Book Database - ISBN Database | ISBNdb' /&gt;" SearchSteps="FuzzySelector, Image" Version="V3" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CVScreenId="354fc0e9-d141-4196-ada5-af32ef7a6c32" CvTextArea="324, 547, 191, 18" CvTextArgument="Search ISBN or Title" CvType="Text" DesignTimeRectangle="287, 516, 1342, 82" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='search_query' parentid='block-isbndbsearchblock' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='search_query' parentid='block-isbndbsearchblock' tag='INPUT' type='text' class='search_query form-control' placeholder='Search ISBN or Title' aaname='' /&gt;" Guid="23eb386d-f0ac-4a5c-b611-c3850eba5d30" SearchSteps="FuzzySelector, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NClick.Target>
+                        <uix:NClick.VerifyOptions>
+                          <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                            <uix:VerifyExecutionOptions.Retry>
+                              <InArgument x:TypeArguments="x:Boolean" />
+                            </uix:VerifyExecutionOptions.Retry>
+                            <uix:VerifyExecutionOptions.Timeout>
+                              <InArgument x:TypeArguments="x:Double" />
+                            </uix:VerifyExecutionOptions.Timeout>
+                          </uix:VerifyExecutionOptions>
+                        </uix:NClick.VerifyOptions>
+                      </uix:NClick>
+                      <uix:NCheckState DisplayName="Comprobar estado de aplicación 'Comprobar estado de aplicación 'Full Title''" sap:VirtualizedContainerService.HintSize="1563.2,1564.8" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="8acb0345-7ba8-4fec-bc5c-31a61474da3d" Version="V3">
+                        <uix:NCheckState.IfExists>
+                          <Sequence DisplayName="Aparece el destino" sap:VirtualizedContainerService.HintSize="1060.8,1314.4" sap2010:WorkflowViewState.IdRef="Sequence_14">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Añadir elemento de la cola" FolderPath="Practica1_14" sap:VirtualizedContainerService.HintSize="354,217" sap2010:WorkflowViewState.IdRef="AddQueueItem_2" Priority="Normal" QueueType="ISBNs_14">
-                              <ui:AddQueueItem.ItemInformation>
-                                <InArgument x:TypeArguments="x:String" x:Key="ISBN">[CurrentRow("ISBN").ToString()]</InArgument>
-                              </ui:AddQueueItem.ItemInformation>
-                            </ui:AddQueueItem>
+                            <uix:NGetText DisplayName="Obtener texto 'Full Title'" sap:VirtualizedContainerService.HintSize="998.4,189.6" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="8acb0345-7ba8-4fec-bc5c-31a61474da3d" TextString="[titulo]" Version="V3">
+                              <uix:NGetText.Target>
+                                <uix:TargetAnchorable BrowserURL="https://isbndb.com/book/9780743273565" CVScreenId="00d82f55-d8c0-4f4e-8fc9-9937d10932ef" ContentHash="Q3l15H3OokCmJ_Q5zJgAQA" CvTextArea="744, 445, 447, 18" CvType="AnyWordGroup" DesignTimeRectangle="736, 439, 458, 33" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='' /&gt;" Guid="ec5d6596-4c9d-4fc3-97c2-37c9c889f579" ImageBase64="" InformativeScreenshot="71b20ec30a9f29ae9865028e39a61afb.png" Reference="n1pC-cyq80eKuI6Vy6Fp-A/PYADaTtPlk2AgUUdqg46SQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='| ISBNdb' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CVScreenId="00d82f55-d8c0-4f4e-8fc9-9937d10932ef" CvTextArea="595, 445, 86, 18" CvTextArgument="Full Title:" CvType="Text" DesignTimeRectangle="596, 439, 140, 33" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' aaname='Full Title:' check:innerText='Full Title:' /&gt;" Guid="9d7d29d4-4f93-44fa-9dfd-5faa1cc6eca5" SearchSteps="FuzzySelector, CV" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NGetText.Target>
+                            </uix:NGetText>
+                            <uix:NGetText DisplayName="Obtener texto 'Authors'" sap:VirtualizedContainerService.HintSize="998.4,189.6" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="8acb0345-7ba8-4fec-bc5c-31a61474da3d" TextString="[autor]" Version="V3">
+                              <uix:NGetText.Target>
+                                <uix:TargetAnchorable BrowserURL="https://isbndb.com/book/9780743273565" CVScreenId="00d82f55-d8c0-4f4e-8fc9-9937d10932ef" ContentHash="V8vOQUP6ck6vSqaBQoGQ_w" CvElementArea="689, 631, 884, 58" CvType="InputBox" DesignTimeRectangle="736, 637, 458, 33" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='5' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='' aaname='                                                                                                                                  ' /&gt;" Guid="92d64ecf-6f3d-42a1-b4a1-06602ee02ab8" InformativeScreenshot="5165b0b39612cdba21754222a9f085ba.png" Reference="n1pC-cyq80eKuI6Vy6Fp-A/g2is3dxMX0ePLn6PPXop2g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='| ISBNdb' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CVScreenId="00d82f55-d8c0-4f4e-8fc9-9937d10932ef" CvTextArea="595, 643, 81, 18" CvTextArgument="Authors:" CvType="Text" DesignTimeRectangle="596, 637, 140, 33" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='5' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' aaname='Authors:' check:innerText='Authors:' /&gt;" Guid="860df0d3-65b7-4a3e-a7a1-54136692c0dd" SearchSteps="FuzzySelector, CV" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NGetText.Target>
+                            </uix:NGetText>
+                            <uix:NCheckState DisplayName="Comprobar estado de aplicación 'Comprobar estado de aplicación 'List Price''" sap:VirtualizedContainerService.HintSize="998.4,624" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="8acb0345-7ba8-4fec-bc5c-31a61474da3d" Version="V3">
+                              <uix:NCheckState.IfExists>
+                                <Sequence DisplayName="Aparece el destino" sap:VirtualizedContainerService.HintSize="449.6,271.2" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <uix:NGetText DisplayName="Obtener texto 'List Price'" sap:VirtualizedContainerService.HintSize="387.2,180.8" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="8acb0345-7ba8-4fec-bc5c-31a61474da3d" TextString="[precio]" Version="V3">
+                                    <uix:NGetText.Target>
+                                      <uix:TargetAnchorable BrowserURL="https://isbndb.com/book/9780743273565" CVScreenId="fe0f19e3-70ae-4924-8bfb-38c983b192e7" ContentHash="Cw5iz81eT06rC2iMCNS9hQ" CvTextArea="744, 593, 110, 20" CvType="AnyWordGroup" DesignTimeRectangle="736, 587, 458, 33" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='4' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='' /&gt;" Guid="20d46757-319c-4e9b-9771-0a73f99f7cbe" InformativeScreenshot="adfaf3b0bd8b1d0dc390bda1c359fa99.png" Reference="n1pC-cyq80eKuI6Vy6Fp-A/0Hhc6ln2E0yGyFUhNtnI2g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='| ISBNdb' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target CVScreenId="fe0f19e3-70ae-4924-8bfb-38c983b192e7" CvTextArea="596, 595, 92, 18" CvTextArgument="List Price:" CvType="Text" DesignTimeRectangle="596, 587, 140, 33" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='4' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' aaname='List Price:' check:innerText='List Price:' /&gt;" Guid="8a2d19c7-bac8-4784-adae-b9f21d40a1c5" SearchSteps="FuzzySelector, CV" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NGetText.Target>
+                                  </uix:NGetText>
+                                </Sequence>
+                              </uix:NCheckState.IfExists>
+                              <uix:NCheckState.IfNotExists>
+                                <Sequence DisplayName="No aparece el destino" sap:VirtualizedContainerService.HintSize="496,373.6" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="433.6,176" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;No se pudo obtener el precio.&quot;]" />
+                                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="433.6,107.2" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[precio]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">No registrado</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </Sequence>
+                              </uix:NCheckState.IfNotExists>
+                              <uix:NCheckState.Target>
+                                <uix:TargetAnchorable BrowserURL="https://isbndb.com/book/9780743273565" CVScreenId="00d82f55-d8c0-4f4e-8fc9-9937d10932ef" ContentHash="Vg3uk3qgB0iJdHD_cLc-rQ" CvTextArea="595, 595, 93, 18" CvTextArgument="List Price:" CvType="Text" DesignTimeRectangle="596, 587, 140, 33" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='4' tag='TH' /&gt;" FuzzyAccuracy="0.9" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' aaname='List Price:' check:innerText='List Price:' /&gt;" Guid="4c312f4c-8f20-4ded-8450-f9db40c3c92d" InformativeScreenshot="169b0400bc2c5deb91f7c9dfddd43e19.png" Reference="n1pC-cyq80eKuI6Vy6Fp-A/wvvLkg-jU0OxuuFQ0Ftt8w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='| ISBNdb' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive" />
+                              </uix:NCheckState.Target>
+                            </uix:NCheckState>
+                            <ui:SetTransactionStatus ContinueOnError="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Establecer estado de la transacción" ErrorType="Business" FolderPath="Practica1_14" sap:VirtualizedContainerService.HintSize="998.4,220.8" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_2" Reason="No existe el ISBN." Status="Successful" TransactionItem="[ElementoColaActual]">
+                              <ui:SetTransactionStatus.Analytics>
+                                <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                              </ui:SetTransactionStatus.Analytics>
+                              <ui:SetTransactionStatus.Output>
+                                <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                              </ui:SetTransactionStatus.Output>
+                            </ui:SetTransactionStatus>
                           </Sequence>
-                        </ActivityAction>
-                      </ui:ForEachRow.Body>
-                    </ui:ForEachRow>
-                  </Sequence>
-                </ActivityAction>
-              </ueab:ExcelApplicationCard.Body>
-            </ueab:ExcelApplicationCard>
-          </Sequence>
-        </ActivityAction>
-      </ueab:ExcelProcessScopeX.Body>
-    </ueab:ExcelProcessScopeX>
-    <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" Top="{x:Null}" DisplayName="Obtener elementos de la cola" FilterStrategy="Equals" FolderPath="Practica1_14" sap:VirtualizedContainerService.HintSize="642,175" sap2010:WorkflowViewState.IdRef="GetQueueItems_1" QueueItemStates="All" QueueName="ISBNs_14" Result="[artículosEnCola]" />
-    <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Utilice el archivo de Excel" sap:VirtualizedContainerService.HintSize="642,831" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ResizeWindow="None" WorkbookPath="C:\Users\luisb.ANGEL_BARRERA\Desktop\IA1_Practicas_14\salida.xlsx">
-      <ueab:ExcelApplicationCard.Body>
-        <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="ExcelSalida" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="592,539" sap2010:WorkflowViewState.IdRef="Sequence_7">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEach x:TypeArguments="ui:QueueItem" CurrentIndex="{x:Null}" DisplayName="Para cada" sap:VirtualizedContainerService.HintSize="530,454" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[artículosEnCola]">
-              <ui:ForEach.Body>
-                <ActivityAction x:TypeArguments="ui:QueueItem">
-                  <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="ui:QueueItem" Name="ElementoColaActual" />
-                  </ActivityAction.Argument>
-                  <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="496,267" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ueab:WriteCellX AutoIncrementRow="True" Cell="[ExcelSalida.Sheet(&quot;Hoja1&quot;).Cell(&quot;A1&quot;)]" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="434,182" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[ElementoColaActual.SpecificContent(&quot;ISBN&quot;)]" />
-                  </Sequence>
-                </ActivityAction>
-              </ui:ForEach.Body>
-            </ui:ForEach>
-          </Sequence>
-        </ActivityAction>
-      </ueab:ExcelApplicationCard.Body>
-    </ueab:ExcelApplicationCard>
+                        </uix:NCheckState.IfExists>
+                        <uix:NCheckState.IfNotExists>
+                          <Sequence DisplayName="No aparece el destino" sap:VirtualizedContainerService.HintSize="449.6,583.2" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[New Object() {ElementoColaActual.SpecificContent(&quot;ISBN&quot;),&quot;&quot;, &quot;&quot;,&quot;&quot;,&quot;Fallido&quot;}]" DataTable="[dtResultados]" DisplayName="Añadir fila de datos" sap:VirtualizedContainerService.HintSize="387.2,220" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                            <ui:SetTransactionStatus ContinueOnError="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Establecer estado de la transacción" ErrorType="Business" FolderPath="Practica1_14" sap:VirtualizedContainerService.HintSize="387.2,272.8" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_1" Reason="No existe el ISBN." Status="Failed" TransactionItem="[ElementoColaActual]">
+                              <ui:SetTransactionStatus.Analytics>
+                                <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                              </ui:SetTransactionStatus.Analytics>
+                              <ui:SetTransactionStatus.Output>
+                                <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                              </ui:SetTransactionStatus.Output>
+                            </ui:SetTransactionStatus>
+                          </Sequence>
+                        </uix:NCheckState.IfNotExists>
+                        <uix:NCheckState.Target>
+                          <uix:TargetAnchorable BrowserURL="https://isbndb.com/book/9780743273565" CVScreenId="00d82f55-d8c0-4f4e-8fc9-9937d10932ef" ContentHash="gjCv79EuQ0ap7a6bjfVdVQ" CvTextArea="595, 445, 86, 18" CvTextArgument="Full Title:" CvType="Text" DesignTimeRectangle="596, 439, 140, 33" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' aaname='Full Title:' check:innerText='Full Title:' /&gt;" Guid="a224bb53-162c-46f8-9ed6-f68dbec5c47b" InformativeScreenshot="a5f8c2915fb0958839cdc15548fb0c27.png" Reference="n1pC-cyq80eKuI6Vy6Fp-A/hxUP7AR7702Bp19MxlQdLQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='| ISBNdb' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                        </uix:NCheckState.Target>
+                      </uix:NCheckState>
+                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[New Object() {ElementoColaActual.SpecificContent(&quot;ISBN&quot;),titulo, autor,precio,&quot;Encontrado&quot;}]" DataTable="[dtResultados]" DisplayName="Añadir fila de datos" sap:VirtualizedContainerService.HintSize="1563.2,220" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                      <Delay DisplayName="Retraso" Duration="00:00:20" sap:VirtualizedContainerService.HintSize="1563.2,113.6" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEach.Body>
+              </ui:ForEach>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" ContentHash="59Ya13ThC0azknzeofSNfg" IconBase64="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" InformativeScreenshot="dea281b453724e4cbf67f9541a02cc66.jpg" Reference="n1pC-cyq80eKuI6Vy6Fp-A/bQvlsBqt5U62Lw5g1ACAxg" Selector="&lt;html app='chrome.exe' title='The World&amp;apos;s Largest Book Database - ISBN Database | ISBNdb' /&gt;" Title="The World's Largest Book Database - ISBN Database | ISBNdb" Url="https://isbndb.com/" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+      <ui:WriteRange AddHeaders="False" DataTable="[dtResultados]" DisplayName="Escribir libro de intervalo" sap:VirtualizedContainerService.HintSize="1755.2,139.2" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Hoja1" StartingCell="A1" WorkbookPath="[urlSalida+ &quot;\salida.xlsx&quot;]" />
+    </Sequence>
   </Sequence>
 </Activity>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Q3l15H3OokCmJ_Q5zJgAQA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://isbndb.com/book/9780743273565" CVScreenId="00d82f55-d8c0-4f4e-8fc9-9937d10932ef" CvTextArea="744, 445, 447, 18" CvType="AnyWordGroup" DesignTimeRectangle="736, 439, 458, 33" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='' /&gt;" Guid="ec5d6596-4c9d-4fc3-97c2-37c9c889f579" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='| ISBNdb' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="00d82f55-d8c0-4f4e-8fc9-9937d10932ef" CvTextArea="595, 445, 86, 18" CvTextArgument="Full Title:" CvType="Text" DesignTimeRectangle="596, 439, 140, 33" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' aaname='Full Title:' check:innerText='Full Title:' /&gt;" Guid="9d7d29d4-4f93-44fa-9dfd-5faa1cc6eca5" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="71b20ec30a9f29ae9865028e39a61afb.png" xmlns="">0zNuf2y63WEe90ZKVMaa60A</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

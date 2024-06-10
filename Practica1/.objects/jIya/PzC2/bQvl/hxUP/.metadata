@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Comprobar estado de aplicación 'Full Title'",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "hxUP7AR7702Bp19MxlQdLQ",
+  "Reference": "n1pC-cyq80eKuI6Vy6Fp-A/hxUP7AR7702Bp19MxlQdLQ",
+  "ParentRef": "n1pC-cyq80eKuI6Vy6Fp-A/bQvlsBqt5U62Lw5g1ACAxg",
+  "Created": "2024-06-09T18:39:03.9999821Z",
+  "Updated": "2024-06-09T18:39:03.9999821Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.4.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
