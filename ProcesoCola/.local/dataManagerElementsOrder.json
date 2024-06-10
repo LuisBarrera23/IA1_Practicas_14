@@ -12,6 +12,7 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "rango&Sequence_1",
         "urlExcel&Sequence_1",
         "urlSalida&Sequence_1",
         "tabla&Sequence_4"
