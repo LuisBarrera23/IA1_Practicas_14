@@ -1,4 +1,4 @@
-# Manual de Usuario  
+# Manual de Tecnico  
 #### Universidad de San Carlos de Guatemala  
 #### Facultad de Ingeniería  
 #### Inteligencia Artificial 1  
