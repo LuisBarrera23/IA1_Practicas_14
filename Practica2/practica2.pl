@@ -44,7 +44,6 @@ parte_de(hoja, planta).
 parte_de(raiz, planta).
 parte_de(semilla, fruto).
 parte_de(fruto, planta).
-parte_de(hoja, arbol).
 parte_de(rama, planta).
 parte_de(no_fruto, planta_aromatica).
 parte_de(no_fruto, flor).
