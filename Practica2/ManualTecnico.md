@@ -125,3 +125,63 @@ incompatible(fruto, no_fruto).
 ```
 
 Aquí se define la incompatibilidad que puede existir entre una clase y subclase.
+
+### Definición de reglas  
+
+#### Regla para saber si un objeto es instancia de otra clase  
+```prolog
+% Regla para saber si un objeto es una instancia de una clase en concreto
+es(Clase, Obj):- instancia_de(Obj, Clase).
+es(Clase, Obj):- instancia_de(Obj, Clasep),
+                 subc(Clasep, Clase).
+
+es(Clase, Obj, 0):- instancia_de(Obj, Clase).
+es(Clase, Obj, Prio):- instancia_de(Obj, Clasep),
+                       subcn(Clasep, Clase, Prio).
+```  
+
+#### Regla para saber si una clase es subclase de otra
+```prolog
+% Para identificar si una clase es subclase
+subc(C1, C2):- subclase_de(C1, C2).
+subc(C1, C2):- subclase_de(C1, C3),
+               subc(C3, C2).
+
+subcn(C1, C2, 1):- subclase_de(C1, C2).
+subcn(C1, C2, N):- subclase_de(C1, C3),
+                   subcn(C3, C2, M), N is M + 1.
+```  
+
+#### Regla para saber las propiedades de un objeto
+```prolog
+% Para obtener las propiedades de un objeto
+propiedad(Obj, Prop, Prio):- es(Clase, Obj, Prio),
+                             tiene_propiedad(Clase, Fun, Arg),
+                             Prop =.. [Fun, Arg].
+
+propiedad(Obj, Prop):- propiedad(Obj, Prop, Prio),
+                       \+ incomp(Obj, Prop, Prio).
+```
+
+#### Regla para saber las partes de una planta
+```prolog
+% Regla para encontrar todas las partes de una planta
+partesde(Obj, Parte, Prio) :- es(Clase, Obj, Prio),
+                              parte_de(Parte, Clase).
+
+partesde(Obj, Parte) :- partesde(Obj, Parte, Prio),
+                        \+ incompar(Obj, Parte, Prio).
+```
+
+#### Reglas para manejar la incompatibilidad
+```prolog
+% Regla para encontrar incompatibilidad entre propiedades
+incomp(Obj, Prop, Prio):- incompatible(Prop, Propp),
+                          propiedad(Obj, Propp, Priop),
+                          Priop =< Prio.
+
+% Regla para encontrar incompatibilidad entre partes
+incompar(Obj, Parte, Prio):- incompatible(Parte, Proppar),
+                             partesde(Obj, Proppar, Priop),
+                             Priop =< Prio.
+```

@@ -55,7 +55,7 @@ incompatible(no_fruto, fruto).
 incompatible(fruto, no_fruto).
 
 
-%%%%%% REGLAS
+%----------------- REGLAS ----------------
 % Regla para saber si un objeto es una instancia de una clase en concreto
 es(Clase, Obj):- instancia_de(Obj, Clase).
 es(Clase, Obj):- instancia_de(Obj, Clasep),
