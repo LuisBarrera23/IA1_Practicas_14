@@ -32,8 +32,8 @@ subclase_de(planta_aromatica, planta_comestible).
 tiene_propiedad(planta, necesita, agua).
 tiene_propiedad(planta, necesita, sol).
 tiene_propiedad(flor, tiene, petalos).
+tiene_propiedad(arbol, tiene, copa).
 tiene_propiedad(arbol, tiene, tronco).
-tiene_propiedad(arbol, tiene, hojas).
 tiene_propiedad(planta_suculenta, almacena, agua).
 tiene_propiedad(fruta, es, comestible).
 tiene_propiedad(vegetal, es, comestible).
@@ -41,10 +41,7 @@ tiene_propiedad(planta_aromatica, tiene, aroma).
 
 % parte_de(Parte, Todo)
 parte_de(hoja, planta).
-parte_de(flor, planta).
 parte_de(raiz, planta).
-parte_de(tronco, arbol).
-parte_de(rama, arbol).
 parte_de(semilla, fruto).
 parte_de(fruto, planta).
 parte_de(hoja, arbol).
@@ -54,8 +51,6 @@ parte_de(no_fruto, flor).
 
 incompatible(tiene(X), no_tiene(X)).
 incompatible(no_tiene(X), tiene(X)).
-incompatible(no_fruto, fruto).
-incompatible(fruto, no_fruto).
 incompatible(no_fruto, fruto).
 incompatible(fruto, no_fruto).
 
