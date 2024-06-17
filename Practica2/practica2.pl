@@ -15,7 +15,7 @@ instancia_de(sauco, arbol).
 instancia_de(menta, planta_aromatica).
 instancia_de(romero, planta_aromatica).
 instancia_de(papa, vegetal).
-instancia_de(basil, planta_aromatica).
+instancia_de(albahaca, planta_aromatica).
 instancia_de(oregano, planta_aromatica).
 
 % subclase_de(Subclase, Clase)
@@ -38,7 +38,6 @@ tiene_propiedad(planta_suculenta, almacena, agua).
 tiene_propiedad(fruta, es, comestible).
 tiene_propiedad(vegetal, es, comestible).
 tiene_propiedad(planta_aromatica, tiene, aroma).
-tiene_propiedad(planta, no_tiene, aroma).
 
 % parte_de(Parte, Todo)
 parte_de(hoja, planta).
@@ -50,16 +49,15 @@ parte_de(semilla, fruto).
 parte_de(fruto, planta).
 parte_de(hoja, arbol).
 parte_de(rama, planta).
-parte_de(flor, vegetal).
-parte_de(hoja, vegetal).
-parte_de(raiz, vegetal).
 parte_de(no_fruto, planta_aromatica).
 parte_de(no_fruto, flor).
 
-incompatible(fruto(X), no_fruto(X)).
 incompatible(tiene(X), no_tiene(X)).
 incompatible(no_tiene(X), tiene(X)).
-incompatible(no_fruto(X), fruto(X)).
+incompatible(no_fruto, fruto).
+incompatible(fruto, no_fruto).
+incompatible(no_fruto, fruto).
+incompatible(fruto, no_fruto).
 
 
 %%%%%% REGLAS
@@ -101,7 +99,7 @@ incomp(Obj, Prop, Prio):- incompatible(Prop, Propp),
                           propiedad(Obj, Propp, Priop),
                           Priop =< Prio.
 
-% Regla para encontrar incompatibilidad entre propiedades
+% Regla para encontrar incompatibilidad entre partes
 incompar(Obj, Parte, Prio):- incompatible(Parte, Proppar),
-                          partesde(Obj, Proppar, Priop),
-                          Priop =< Prio.
+                             partesde(Obj, Proppar, Priop),
+                             Priop =< Prio.
