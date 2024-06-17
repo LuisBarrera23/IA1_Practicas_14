@@ -37,6 +37,12 @@ Este sistema está diseñado para ser utilizado por estudiantes y profesionales 
 - Computadora con entorno Prolog instalado
 - Editor de código para Prolog
 
+## Red Semántica
+
+<img src="RedSemanticaPrac2.jpg" alt="img1"/> 
+
+En la red semántica se puede observar la conexión entre los nodos que representan las diferentes instancias de planta.
+
 ## Implementación en Prolog
 
 ### Definición de Instancias de una clase 
