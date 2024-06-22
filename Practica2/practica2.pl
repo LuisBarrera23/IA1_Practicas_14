@@ -24,7 +24,6 @@ subclase_de(arbol, planta).
 subclase_de(planta_suculenta, planta).
 subclase_de(vegetal, planta_comestible).
 subclase_de(fruta, planta_comestible).
-subclase_de(vegetal, planta_comestible).
 subclase_de(planta_comestible, planta).
 subclase_de(planta_aromatica, planta_comestible).
 
