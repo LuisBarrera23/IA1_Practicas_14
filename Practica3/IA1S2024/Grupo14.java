@@ -1,13 +1,14 @@
 package IA1S2024;
 import robocode.*;
 import java.awt.Color;
-import java.awt.geom.Point2D;
 import java.util.ArrayList;
 
 public class Grupo14 extends AdvancedRobot {
 
     private byte direccionMovimiento = 1;
     private boolean escaneadoReciente = false;
+    private boolean evadiendo = false; // Estado de evasión
+    private long tiempoInicioEvasion = 0; // Tiempo en el que comenzó la evasión
     private ArrayList<double[]> waves = new ArrayList<>();
     private double[] surfStats = new double[47];
 
@@ -31,10 +32,22 @@ public class Grupo14 extends AdvancedRobot {
         double direccionAbsoluta = getHeading() + e.getBearing(); // Calcula la dirección absoluta hacia el robot enemigo
         double direccionDesdeCañon = normalRelativeAngleDegrees(direccionAbsoluta - getGunHeading()); // Calcula el ángulo relativo desde el cañón hacia el enemigo
 
+        // Evadir si no se puede disparar (cañón sobrecalentado)
+        if (!evadiendo && getGunHeat() > 0) {
+            evadir();
+            return; // Salir del método para evitar ejecutar el resto de la lógica
+        }
+
+        // Salir del estado de evasión si han pasado al menos 3 ticks desde que empezó la evasión
+        if (evadiendo && getTime() - tiempoInicioEvasion > 3) {
+            evadiendo = false;
+        }
+
+        // Lógica de movimiento y disparo normal
         // Movimiento oscilante para hacer más difícil que el robot sea alcanzado
         setAhead(150 * direccionMovimiento); // Movimiento más largo
         setTurnRight(e.getBearing() + 90 - (20 * direccionMovimiento)); // Aumenta el cambio de dirección
-        
+
         // Cambia la dirección de movimiento aleatoriamente para evitar predecibilidad
         if (Math.random() > 0.8) {
             direccionMovimiento *= -1;
@@ -61,11 +74,7 @@ public class Grupo14 extends AdvancedRobot {
         scan(); // Continúa escaneando después de realizar las acciones
     }
 
-    // Método llamado cuando el robot es golpeado por una bala
-    public void onHitByBullet(HitByBulletEvent e) {
-        direccionMovimiento *= -1; // Invierte la dirección de movimiento para evadir
-        setAhead(150 * direccionMovimiento); // Movimiento más largo
-    }
+
 
     // Método llamado cuando el robot choca con una pared
     public void onHitWall(HitWallEvent e) {
@@ -78,6 +87,14 @@ public class Grupo14 extends AdvancedRobot {
         direccionMovimiento *= -1; // Invierte la dirección de movimiento para evitar quedarse atascado
         setAhead(150 * direccionMovimiento); // Movimiento más largo
         setTurnRight(90 - (30 * direccionMovimiento)); // Gira en un ángulo más amplio
+    }
+
+    // Método para evadir
+    private void evadir() {
+        evadiendo = true; // Activar estado de evasión
+        tiempoInicioEvasion = getTime(); // Registra el tiempo de inicio de la evasión
+        setTurnRight(Math.random() * 180 - 90); // Gira aleatoriamente entre -90 y 90 grados
+        setAhead(150 * direccionMovimiento); // Movimiento más largo
     }
 
     // Método para normalizar un ángulo entre -180 y 180 grados
